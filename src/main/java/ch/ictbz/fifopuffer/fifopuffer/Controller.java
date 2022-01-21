@@ -23,8 +23,10 @@ public class Controller {
             puffer.put(Integer.parseInt(inputTextField.getText()));
         } catch(Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Die Zahl konnte nicht in den Puffer gelegt werden.");
-            alert.setContentText(String.valueOf(e));
+            alert.setTitle("Error");
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText("Die Zahl konnte nicht in den Puffer gelegt werden.");
+            alert.showAndWait();
         }
     }
 
@@ -33,8 +35,10 @@ public class Controller {
             outPutTextField.setText(String.valueOf(puffer.get()));
         } catch(Exception e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Die Zahl konnte nicht vom Puffer gelesen werden.");
-            alert.setContentText(String.valueOf(e));
+            alert.setTitle("Error");
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText("Die Zahl konnte nicht vom Puffer gelesen werden.");
+            alert.showAndWait();
         }
 
     }
